@@ -7,11 +7,9 @@
 <body>
 <h1>cookie sample 2</h1>
   
-<p id="msg">Cookie の表示と削除　</p>
+<p>Cookie の表示と削除　</p>
 
 <script>
-
-
 function showCookie() {
   console.log(document.cookie);
   let e = document.getElementById('msg');
@@ -21,6 +19,10 @@ function showCookie() {
 function delCookie()
 {
   document.cookie = "name=; max-age=0; path=/";
+  document.cookie = "old=; max-age=0; path=/";
+  document.cookie = "address=; max-age=0; path=/";
+  document.cookie = "user=; max-age=0; path=/";
+  document.cookie = "username=; max-age=0; path=/";
 }
   
 
