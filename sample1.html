@@ -5,9 +5,9 @@
 <title>サンプル</title>
 </head>
 <body>
-<h1>Cookie を読み出す例</h1>
+<h1>cookie sample 1</h1>
   
-<p id="msg">Cookie を読み込む例</p>
+<p id="msg">Cookie を読みます</p>
 
 <script>
 function getCookie(cname) {
@@ -36,8 +36,7 @@ function getCookie(cname) {
      if (user != "" && user != null) {
        document.cookie = 'name=' + user;
      }
-  }
-}
+
 
 let e = document.getElementById('msg');
 e.insertAdjacentHTML('afterend', '<p>' + document.cookie + '</p>');
