@@ -10,31 +10,37 @@
 <p id="msg">Cookie の表示と削除　</p>
 
 <script>
-function getCookie(cname) {
-  let name = cname + "=";
-  let decodedCookie = decodeURIComponent(document.cookie);
-  let ca = decodedCookie.split(';');
-  for(var i = 0; i < ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
+
+
+function showCookie() {
+  var user=getCookie("username");
+  console.log(user);
+  if (user != "" ) {
+    alert("また見てくれてありがとう！" + user);
+  } else {
+     user = prompt("名前を教えてください:","");
+     if (user != "" && user != null) {
+       setCookie("username", user, 30);
+     }
   }
-  return "";
 }
 
 
- let user=getCookie("name");
-
-
+function delCookie()
+{
+  document.cookie = "username=; max-age=0; path=/";
+}
+  
 
 let e = document.getElementById('msg');
 e.insertAdjacentHTML('afterend', '<p>' + document.cookie + '</p>');
   console.log(document.cookie);
 </script>
+<div style="background-color : #CCC;">
+   <input type="button" value="クッキー判定" onclick="checkCookie()">
+  <input type="button" value="クッキー削除" onclick="delCookie()">
+</div>
+  
 
 </body>
 </html>
