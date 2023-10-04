@@ -15,21 +15,14 @@ function showCookie() {
   let e = document.getElementById('msg');
 　　　　　e.insertAdjacentHTML('afterend', '<p>' + document.cookie + '</p>');
 }
-
-function delCookie()
-{
-  document.cookie = "name=; max-age=0; path=/";
-  document.cookie = "old=; max-age=0;";
-  document.cookie = "address=; max-age=0; path=/";
-  document.cookie = "user=; max-age=0; path=/";
-  document.cookie = "username=; max-age=0; path=/";
-}
   
+const clearAllCookies = () => 
+    document.cookie.split(';').forEach(cookie => document.cookie = cookie.replace(/^ +/, '').replace(/=.*/, `=;max-age=${0};`));
 
 </script>
 <div style="background-color : #CCC;">
    <input type="button" value="クッキー表示" onclick="showCookie()">
-  <input type="button" value="クッキー削除" onclick="delCookie()">
+  <input type="button" value="クッキー削除" onclick=”clearAllCookies()">
 </div>
   <p id="msg">Cookie の値　</p>
   
