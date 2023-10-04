@@ -13,33 +13,23 @@
 
 
 function showCookie() {
-  var user=getCookie("username");
-  console.log(user);
-  if (user != "" ) {
-    alert("また見てくれてありがとう！" + user);
-  } else {
-     user = prompt("名前を教えてください:","");
-     if (user != "" && user != null) {
-       setCookie("username", user, 30);
-     }
-  }
+  console.log(document.cookie);
+  let e = document.getElementById('msg');
+　　　　　e.insertAdjacentHTML('afterend', '<p>' + document.cookie + '</p>');
 }
-
 
 function delCookie()
 {
-  document.cookie = "username=; max-age=0; path=/";
+  document.cookie = "name=; max-age=0; path=/";
 }
   
 
-let e = document.getElementById('msg');
-e.insertAdjacentHTML('afterend', '<p>' + document.cookie + '</p>');
-  console.log(document.cookie);
 </script>
 <div style="background-color : #CCC;">
-   <input type="button" value="クッキー判定" onclick="checkCookie()">
+   <input type="button" value="クッキー表示" onclick="showCookie()">
   <input type="button" value="クッキー削除" onclick="delCookie()">
 </div>
+  <p id="msg">Cookie の値　</p>
   
 
 </body>
