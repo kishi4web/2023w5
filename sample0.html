@@ -10,10 +10,9 @@
 
 <p id="msg">Cookieを書きます。</p>
 <script>
-document.cookie = 'old=27; path=/';
-document.cookie = 'address=Tokyo；　path=/';
-document.cookie = 'user=梅子; path=/';  // 次の行で上書きされます。
-document.cookie = "user=Umeko; max-age=3600; path=/"; // max-age 60*60=3600秒＝1時間
+document.cookie = 'address=Tokyo';
+document.cookie = 'user=梅子;';  // 次の行で上書きされます。
+document.cookie = "user=Umeko; max-age=3600;"; // max-age 60*60=3600秒＝1時間
 
 let e = document.getElementById('msg');
 e.insertAdjacentHTML('afterend', '<p>' + document.cookie + '</p>');
