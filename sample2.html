@@ -23,7 +23,6 @@ function removeCookies(){
   document.cookie = "address=; max-age=0;";
 }
   
-  
 const clearAllCookies = () => 
     document.cookie.split(';').forEach(cookie => document.cookie = cookie.replace(/^ +/, '').replace(/=.*/, `=;max-age=${0};`));
 
