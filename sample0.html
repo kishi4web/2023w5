@@ -6,12 +6,12 @@
 </head>
 <body>
   
-<p id="msg">2023 Cookieの読み書きを行います。</p>
+<p id="msg">Cookie をブラウザ側に書く例</p>
 
 <script>
 document.cookie = 'old=27';
 document.cookie = 'address=Tokyo';
-let name = encodeURIComponent('津田塾大学');
+let name = encodeURIComponent('2023 Web Technology B');
 document.cookie = 'name=' + name;
 
 let e = document.getElementById('msg');
