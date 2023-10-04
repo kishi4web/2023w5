@@ -5,9 +5,9 @@
 <title>サンプル</title>
 </head>
 <body>
-<h1>cookie sample 1</h1>
+<h1>cookie sample 2</h1>
   
-<p id="msg">Cookie を読みます</p>
+<p id="msg">Cookie の表示と削除　</p>
 
 <script>
 function getCookie(cname) {
@@ -28,15 +28,7 @@ function getCookie(cname) {
 
 
  let user=getCookie("name");
-  console.log(user);
-  if (user != "" ) {
-    alert("また見てくれてありがとう！" + user);
-  } else {
-     user = prompt("名前を教えてください:","");
-     if (user != "" && user != null) {
-       document.cookie = 'name=' + user;
-     }
-  }
+
 
 
 let e = document.getElementById('msg');
